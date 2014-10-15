@@ -3,6 +3,9 @@ Twitter Bootstrap Wizard
 
 This Twitter Bootstrap plugin builds a wizard using a formatted tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into each step individually.
 
+##### Note
+ We will not longer be updating the bower version of bootstrap wizard or any other package manager. See <a href="https://github.com/VinceG/twitter-bootstrap-wizard/issues/81#issuecomment-42909528">#81</a> for the reason why. Please use 'master' branch instead.
+
 <a href="http://vadimg.com/twitter-bootstrap-wizard-example/" target="_blank">Website & Demo</a>
 
 <a href='https://twitter.com/gabrielva' target='_blank'>Follow @gabrielva</a>
@@ -76,6 +79,16 @@ Options
 			<td>'.wizard li.last'</td>
 			<td>last element selector</td>
 		</tr>	
+		<tr>
+			<td>backSelector</td>
+			<td>'.wizard li.back'</td>
+			<td>back element selector</td>
+		</tr>
+		<tr>
+			<td>finishSelector</td>
+			<td>'.wizard li.finish'</td>
+			<td>finish element selector</td>
+		</tr>
 	</tbody>	
 </table>
 
@@ -112,6 +125,14 @@ Events
 		<tr>
 			<td>onLast</td>
 			<td>Fired when last button is clicked (return false to disable moving to the last step)</td>
+		</tr>
+		<tr>
+			<td>onBack</td>
+			<td>Fired when back button is clicked (return false to disable moving backwards in navigation history)</td>
+		</tr>
+		<tr>
+			<td>onFinish</td>
+			<td>Fired when finish button is clicked (return value is irrelevant)</td>
 		</tr>
 		<tr>
 			<td>onTabChange</td>
@@ -160,8 +181,18 @@ Methods
 			<td>Jumps to the last tab</td>
 		</tr>
 		<tr>
+			<td>back</td>
+			<td></td>
+			<td>Moves back in navigation history by jumping to the former tab</td>
+		</tr>
+		<tr>
+			<td>finish</td>
+			<td></td>
+			<td>"Finishes" the wizard by calling onFinish callback</td>
+		</tr>
+		<tr>
 			<td>show</td>
-			<td>zero based index</td>
+			<td>zero based index or tab target id</td>
 			<td>Jumps to the specified tab</td>
 		</tr>
 		<tr>
